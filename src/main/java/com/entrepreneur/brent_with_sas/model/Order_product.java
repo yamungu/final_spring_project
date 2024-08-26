@@ -1,6 +1,10 @@
 package com.entrepreneur.brent_with_sas.model;
 
-import jakarta.persistence.*;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 
 public class Order_product {
 

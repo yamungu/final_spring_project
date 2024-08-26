@@ -15,24 +15,10 @@ public class EntrepreneurService {
 
     public List<Entrepreneur> getAll() {return entrepreneurRepo.findAll();}
 
-    public Entrepreneur getEntrepreneurById(int id){return entrepreneurRepo.findById(id).orElse(null);}
+    public Entrepreneur getEntrepreneurById(long id){return entrepreneurRepo.findById(id).orElse(null);}
 
-    public void create(Entrepreneur entrepreneur){entrepreneurRepo.save(entrepreneur); }
 
-    public void updateEntrepreneur(Integer id, Entrepreneur entrepreneur){
-        Entrepreneur existingEntrepreneur = entrepreneurRepo.findById(id).orElse(null);
-
-        if (existingEntrepreneur !=null){
-  existingEntrepreneur.setFirst_name((entrepreneur.getFirst_name()));
-           existingEntrepreneur.setLast_name(entrepreneur.getLast_name());
-            existingEntrepreneur.setEmail(entrepreneur.getEmail());
-            existingEntrepreneur.setPhone(entrepreneur.getPhone());
-            existingEntrepreneur.setPassword(entrepreneur.getPassword());
-            existingEntrepreneur.setUsername(entrepreneur.getUsername());
-            entrepreneurRepo.save(existingEntrepreneur);
-        }
-    }
-    public void delete(Integer id){entrepreneurRepo.deleteById(id);}
+    public void delete(Long id){entrepreneurRepo.deleteById(id);}
 
 }
 

@@ -1,11 +1,12 @@
 package com.entrepreneur.brent_with_sas.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.List;
 
+import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -22,6 +23,10 @@ public class Product {
     private int product_id;
     private String product_name;
     private String price;
+    private String product_location;
+    private String latitude;
+    private String longitude;
+
 
 
     @ManyToMany(mappedBy = "product")
@@ -37,9 +42,12 @@ public class Product {
 
    //  constructor
 
-    public Product( String product_name, String price) {
+    public Product( String product_name, String price,String product_location,String latitude,String longitude) {
         this.product_name = product_name;
         this.price = price;
+        this.product_location = product_location;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 }
 
